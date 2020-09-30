@@ -77,7 +77,7 @@ export default function Saved() {
                 <Toolbar>
                     {/* <img style={{ paddingRight: '10px' }} src={Logo} alt='University of Florida Logo'/> */}
                     <Typography variant="h6" color="inherit" noWrap>
-                        <Link to="/" style={{ textDecoration: 'none', color: '#fff' }}>Bootcamp Project</Link>
+                        <Link to="/" style={{ textDecoration: 'none', color: '#fff' }}>Home</Link>
                     </Typography>
                     <Typography
                         style={{ marginRight: '10px' }}
