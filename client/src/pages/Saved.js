@@ -3,6 +3,7 @@ import API from "../utils/API";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
+// import Logo from "../assets/ucf-logo.png";
 import Typography from "@material-ui/core/Typography";
 import {Link} from "react-router-dom";
 import Container from "@material-ui/core/Container";
@@ -48,11 +49,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Saved() {
     const classes = useStyles();
     const [ savedBooks, setSavedBooks ] = useState();
-
-    useEffect(() => {
-      loadBooks();
-    }, []);
-
     const loadBooks = () => {
         API.getBooks()
             .then(response => {
@@ -61,6 +57,20 @@ export default function Saved() {
                 console.log(savedBooks);
             }).catch(err => console.log(err));
     }
+
+
+    useEffect(() => {
+      loadBooks();
+    });
+
+    // const loadBooks = () => {
+    //     API.getBooks()
+    //         .then(response => {
+    //             console.log(response);
+    //             setSavedBooks(response.data);
+    //             console.log(savedBooks);
+    //         }).catch(err => console.log(err));
+    // }
 
     const handleDelete = (id) => {
         API.deleteBook(id)
@@ -77,7 +87,7 @@ export default function Saved() {
                 <Toolbar>
                     {/* <img style={{ paddingRight: '10px' }} src={Logo} alt='University of Florida Logo'/> */}
                     <Typography variant="h6" color="inherit" noWrap>
-                        <Link to="/" style={{ textDecoration: 'none', color: '#fff' }}>Home</Link>
+                        <Link to="/" style={{ textDecoration: 'none', color: '#fff' }}>Bootcamp Project</Link>
                     </Typography>
                     <Typography
                         style={{ marginRight: '10px' }}
